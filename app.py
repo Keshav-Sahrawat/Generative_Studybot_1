@@ -13,6 +13,9 @@ load_dotenv()
 groq_api_key = os.getenv("GROQ_API_KEY")
 mongo_uri = os.getenv("MONGODB_URI")
 
+print("GROQ KEY LOADED:", groq_api_key is not None)
+print("MONGO URI LOADED:", mongo_uri is not None)
+
 client = MongoClient(mongo_uri)
 db = client["chat"]
 collection = db["users"]
